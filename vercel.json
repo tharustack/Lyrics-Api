@@ -1,9 +1,33 @@
 {
   "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
+      "source": "/api/search",
+      "destination": "/api/search.js"
+    },
+    {
+      "source": "/api/lyrics",
+      "destination": "/api/lyrics.js"
+    },
+    {
+      "source": "/api/genius/search",
+      "destination": "/api/genius/search.js"
+    },
+    {
+      "source": "/api/genius/lyrics",
+      "destination": "/api/genius/lyrics.js"
+    },
+    {
+      "source": "/api/sinhala/search",
+      "destination": "/api/sinhala/search.js"
+    },
+    {
+      "source": "/api/sinhala/lyrics",
+      "destination": "/api/sinhala/lyrics.js"
+    },
+    {
+      "source": "/api",
+      "destination": "/api/index.js"
     }
   ],
   "headers": [
