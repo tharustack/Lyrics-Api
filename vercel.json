@@ -1,7 +1,8 @@
 {
   "functions": {
     "api/*.js": {
-      "maxDuration": 30
+      "maxDuration": 30,
+      "memory": 1024
     }
   },
   "rewrites": [
@@ -16,6 +17,14 @@
     {
       "source": "/api/lyrics",
       "destination": "/api/lyrics.js"
+    },
+    {
+      "source": "/api/test",
+      "destination": "/api/test.js"
+    },
+    {
+      "source": "/",
+      "destination": "/api/test.js"
     }
   ],
   "headers": [
@@ -23,22 +32,14 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "Access-Control-Allow-Credentials",
-          "value": "true"
-        },
-        {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "GET,OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+          "value": "GET, OPTIONS"
         }
       ]
     }
   ]
-        }
+}
